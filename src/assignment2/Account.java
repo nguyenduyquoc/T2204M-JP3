@@ -6,10 +6,6 @@ public class Account {
     public  int  balance = 0;
 
     public Account() {
-        id = 0;
-        name = "Quoc";
-        balance = 0;
-
     }
 
     public Account(int id, String name, int balance) {
