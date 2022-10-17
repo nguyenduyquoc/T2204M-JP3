@@ -105,6 +105,7 @@ public class HD_TienDien_VN {
         System.out.println(getTypeCustomer());
         System.out.println(getAmountKW());
         System.out.println(getIntoMoney());
+        System.out.println("_______________");
     }
     // tính số tiền vượt định mức
     public int excessMoney(int check) {
