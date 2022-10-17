@@ -1,7 +1,6 @@
 
-package assignment;
+package assignment1;
 
-import java.nio.file.attribute.FileTime;
 import java.util.Scanner;
 
 public class Main {

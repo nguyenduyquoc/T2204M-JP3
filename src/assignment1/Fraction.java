@@ -1,4 +1,4 @@
-package assignment;
+package assignment1;
 
 public class Fraction {
     int tuSo;
