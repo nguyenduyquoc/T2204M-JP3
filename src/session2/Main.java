@@ -26,6 +26,7 @@ public class Main {
         }
 
         pb1.searchPhone("Nguyen Duy Quoc");
+        pb1.sort();
 
 
     }

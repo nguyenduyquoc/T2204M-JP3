@@ -1,6 +1,8 @@
 package session2;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 
 public class PhoneBook extends Phone{
@@ -66,23 +68,29 @@ public class PhoneBook extends Phone{
     }
 
     @Override
-    public void searchPhone(String name) {
-        boolean search = false;
-        for (int i = 0; i < phoneArr.size(); i++){
-            if (phoneArr.get(i).getName().equals(name)){
-                search = true;
-                System.out.println(phoneArr.get(i).getName());
-                System.out.println(phoneArr.get(i).getTel());
-                break;
+    PhoneList searchPhone(String name) {
+        for(PhoneList p: getPhoneArr()){
+            if(p.getName().equals(name)){
+                return p;
             }
         }
-        if (!search) {
-            System.out.println("khong tìm thây danh bạ có tên "+ name);
-        }
+        return null;
     }
 
     @Override
     public void sort() {
+//        Collections.sort(getPhoneArr(), new Comparator<PhoneList>() {
+//            @Override
+//            public int compare(PhoneList o1, PhoneList o2) {
+//                return o1.getName().compareTo(o2.getName());
+//            }
+//        });
+
+
+        Comparator<PhoneList> cp = (o1,o2)->{
+            return o1.getName().compareTo(o2.getName());
+        };
+        Collections.sort(getPhoneArr(), cp);
 
     }
 
