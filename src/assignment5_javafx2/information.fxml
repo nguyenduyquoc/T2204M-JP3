@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="assignment5_javafx2.InformationController">
+   <children>
+      <Text layoutX="233.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Information">
+         <font>
+            <Font size="18.0" />
+         </font></Text>
+      <TextField fx:id="txtFullName" layoutX="71.0" layoutY="75.0" text="Full name" />
+      <TextField fx:id="txtEmail" layoutX="71.0" layoutY="128.0" text="Email" />
+      <TextField fx:id="txtAddress" layoutX="71.0" layoutY="178.0" text="Address" />
+      <TextField fx:id="txtAge" layoutX="71.0" layoutY="231.0" text="Age" />
+      <TextField fx:id="txtPhoneNumber" layoutX="71.0" layoutY="285.0" text="Phone number" />
+      <Button layoutX="192.0" layoutY="345.0" mnemonicParsing="false" onAction="#submit" text="Submit" />
+      <ListView fx:id="lv" layoutX="313.0" layoutY="75.0" prefHeight="300.0" prefWidth="219.0" />
+   </children>
+</Pane>
