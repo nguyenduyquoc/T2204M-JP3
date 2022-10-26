@@ -16,6 +16,7 @@
       <TextField fx:id="txtEmail" layoutX="59.0" layoutY="146.0" promptText="Email" />
       <TextField fx:id="txtMark" layoutX="58.0" layoutY="200.0" promptText="Mark" />
       <Button onAction="#addMark_student" layoutX="178.0" layoutY="251.0" mnemonicParsing="false" text="Submit" />
+      <Button onAction="#addMark_student" layoutX="178.0" layoutY="251.0" mnemonicParsing="false" text="Submit" />
       <Button onAction="#sortByName" layoutX="26.0" layoutY="307.0" mnemonicParsing="false" text="Sort by name" />
       <Button onAction="#sortByMark" layoutX="142.0" layoutY="307.0" mnemonicParsing="false" text="Sort by mark" />
       <ListView fx:id="listView" layoutX="300.0" layoutY="93.0" prefHeight="243.0" prefWidth="238.0" />
