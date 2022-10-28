@@ -5,34 +5,34 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="562.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="assignment7.edit.EditController">
     <children>
-        <Text fill="#863315" layoutX="162.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FORM">
+        <Text fill="#863315" layoutX="162.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EDIT">
             <font>
                 <Font size="28.0" />
             </font>
         </Text>
-        <TextField fx:id="txtName" layoutX="57.0" layoutY="126.0" prefHeight="37.0" prefWidth="286.0" promptText="Full Name" >
+        <TextField fx:id="txtName" layoutX="57.0" layoutY="126.0" prefHeight="37.0" prefWidth="286.0" promptText="Full Name">
             <font>
                 <Font name="System Italic" size="15.0" />
             </font>
         </TextField>
-        <TextField fx:id="txtEmail" layoutX="60.0" layoutY="197.0" prefHeight="37.0" prefWidth="286.0" promptText="Email">
+        <TextField fx:id="txtEmail" layoutX="57.0" layoutY="198.0" prefHeight="37.0" prefWidth="286.0" promptText="Email">
             <font>
                 <Font name="System Italic" size="15.0" />
             </font>
         </TextField>
-        <TextField fx:id="txtMark" layoutX="60.0" layoutY="269.0" prefHeight="37.0" prefWidth="286.0" promptText="Mark">
+        <TextField fx:id="txtMark" layoutX="57.0" layoutY="270.0" prefHeight="37.0" prefWidth="286.0" promptText="Mark">
             <font>
                 <Font name="System Italic" size="15.0" />
             </font>
         </TextField>
-        <Button onAction="#submit" layoutX="153.0" layoutY="342.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="94.0" text="Submit" textFill="#b81616">
+        <Button layoutX="153.0" layoutY="404.0" mnemonicParsing="false" onAction="#submit" prefHeight="39.0" prefWidth="94.0" text="Submit" textFill="#b81616">
             <font>
                 <Font size="18.0" />
             </font>
         </Button>
-        <Button onAction="#backToList" layoutX="28.0" layoutY="23.0" mnemonicParsing="false" text="Back" textFill="#b81616" />
+        <Button layoutX="28.0" layoutY="23.0" mnemonicParsing="false" onAction="#backToList" text="Back" textFill="#b81616" />
+      <ComboBox fx:id="cbGender" layoutX="57.0" layoutY="341.0" prefHeight="37.0" prefWidth="286.0" promptText="Gender" />
     </children>
 </Pane>

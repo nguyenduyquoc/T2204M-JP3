@@ -4,11 +4,13 @@ public class Mark_Student {
     private String name;
     private String email;
     private int mark;
+    private String gender;
 
-    public Mark_Student(String name, String email, int mark) {
+    public Mark_Student(String name, String email, int mark, String gender) {
         this.name = name;
         this.email = email;
         this.mark = mark;
+        this.gender = gender;
     }
 
     public String getName() {
@@ -35,7 +37,15 @@ public class Mark_Student {
         this.mark = mark;
     }
 
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
     public String toString(){
-        return "\t" + this.name + "\n" + "\t" + this.email +  "\n" + "\t" + + this.mark;
+        return "\t" + this.name + "\n" + "\t" + this.email +  "\n" + "\t" + + this.mark + "\n" + "\t" +this.gender;
     }
 }

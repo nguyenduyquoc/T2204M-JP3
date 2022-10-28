@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ListView;
 
 
@@ -36,7 +37,6 @@ public class ListController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         listView.setItems(ls);
-        listView.refresh();
     }
 
     public void addStudent(ActionEvent actionEvent) throws Exception {
@@ -73,12 +73,21 @@ public class ListController implements Initializable {
     }
 
     public void edit(ActionEvent actionEvent) throws Exception{
+        try {
+            if (listView.getSelectionModel().getSelectedItem() == null){
+                throw new Exception("Vui long chon sinh vien muon sua");
+            }
+            EditController.editedStudent = listView.getSelectionModel().getSelectedItem();
 
-        EditController.editedStudent = listView.getSelectionModel().getSelectedItem();
-
-        Parent createForm = FXMLLoader.load(getClass().getResource("../edit/editStudent.fxml"));
-        Scene sc = new Scene(createForm,800,600);
-        Main.rootStage.setScene(sc);
+            Parent editForm = FXMLLoader.load(getClass().getResource("../edit/editStudent.fxml"));
+            Scene sc = new Scene(editForm,800,600);
+            Main.rootStage.setScene(sc);
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error!!!");
+            alert.setHeaderText(e.getMessage());
+            alert.show();
+        }
     }
 
 
