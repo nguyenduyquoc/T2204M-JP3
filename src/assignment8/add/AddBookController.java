@@ -49,13 +49,13 @@ public class AddBookController implements Initializable {
 
     }
 
-    public void backToList(ActionEvent event) throws Exception{
+    public void backToList(ActionEvent actionEvent) throws Exception{
         Parent listScene = FXMLLoader.load(getClass().getResource("../list/listOfBooks.fxml"));
         Scene sc = new Scene(listScene, 800, 600);
         Main.rootStage.setScene(sc);
     }
 
-    public void submit(ActionEvent event) throws Exception {
+    public void submit(ActionEvent actionEvent) throws Exception {
         // ADD INFORMATION BOOK
         try{
             String bookId = txtBookId.getText();

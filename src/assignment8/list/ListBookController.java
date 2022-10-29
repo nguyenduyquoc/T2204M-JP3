@@ -27,6 +27,7 @@ public class ListBookController implements Initializable {
     public TextField searchBoxName;
 
     private boolean status = false;
+    public static InformationBook deleteBook;
 
     public static ObservableList<InformationBook> getList() {
         return ls;
@@ -69,7 +70,7 @@ public class ListBookController implements Initializable {
         Collections.sort(getList(),book);
     }
 
-    public void edit(ActionEvent event) {
+    public void edit(ActionEvent actionEvent) {
         try {
             if (listView.getSelectionModel().getSelectedItem() == null) {
                 throw new Exception("Click to select a book you want to edit and then click edit");
@@ -89,5 +90,21 @@ public class ListBookController implements Initializable {
 
     public void search(ActionEvent actionEvent) {
 
+    }
+
+    public void delete(ActionEvent actionEvent) {
+        try {
+            if (listView.getSelectionModel().getSelectedItem() == null) {
+                throw new Exception("Click to select a book you want to delete and then click delete");
+            }
+            deleteBook = listView.getSelectionModel().getSelectedItem();
+            ls.remove(deleteBook);
+
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error!!!");
+            alert.setHeaderText(e.getMessage());
+            alert.show();
+        }
     }
 }
