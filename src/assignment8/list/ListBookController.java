@@ -19,6 +19,7 @@ import java.net.URL;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
 
 public class ListBookController implements Initializable {
 
@@ -89,7 +90,24 @@ public class ListBookController implements Initializable {
     }
 
     public void search(ActionEvent actionEvent) {
+        try {
+            String s = searchBoxName.getText();
+            if (s.isEmpty()){
+                listView.setItems(ls);
+                throw new Exception("Nhap tu can tim kiem");
+            }
 
+            ObservableList<InformationBook> result = ls.stream()
+                    .filter(student -> student.getBookName().toLowerCase().contains(s.toLowerCase()))
+                    .collect(Collectors.toCollection(FXCollections::observableArrayList));
+            listView.setItems(result);
+
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error!");
+            alert.setHeaderText(e.getMessage());
+            alert.show();
+        }
     }
 
     public void delete(ActionEvent actionEvent) {
