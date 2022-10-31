@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="1020.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="assignment8_tableList.tableList.tableListController">
+   <children>
+      <Text fill="#971919" layoutX="35.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LIST OF INFORMATION BOOK" textAlignment="JUSTIFY">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtSearch" layoutX="37.0" layoutY="53.0" prefHeight="31.0" prefWidth="220.0" promptText="Search by bookname ............" />
+      <Button layoutX="919.0" layoutY="53.0" mnemonicParsing="false" onAction="#addBook" style="-fx-background-color: grey;" text="Add&gt;&gt;" />
+      <Button layoutX="269.0" layoutY="52.0" mnemonicParsing="false" onAction="#searchBook" style="-fx-background-color: grey;" text="Search" />
+      <Button layoutX="343.0" layoutY="52.0" mnemonicParsing="false" onAction="#clear" style="-fx-background-color: grey;" text="Clear" />
+
+      <TableView fx:id="tbBook" layoutX="37.0" layoutY="108.0" prefHeight="493.0" prefWidth="947.0">
+        <columns>
+          <TableColumn fx:id="cBookId" prefWidth="75.0" style="-fx-alignment: center;" text="ID" />
+          <TableColumn fx:id="cBookName" prefWidth="150.0" text="Bookname" />
+            <TableColumn fx:id="cAuthor" minWidth="0.0" prefWidth="133.0" text="Author" />
+            <TableColumn fx:id="cPublisher" prefWidth="176.0" text="Publisher" />
+            <TableColumn fx:id="cType" prefWidth="75.0" text="Type" />
+            <TableColumn fx:id="cPrice" prefWidth="70.0" style="-fx-alignment: center;" text="Price" />
+            <TableColumn fx:id="cQuantity" prefWidth="102.0" style="-fx-alignment: center;" text="Quantity" />
+            <TableColumn fx:id="cEdit" prefWidth="73.0" style="-fx-alignment: center;" text="Edit" />
+            <TableColumn fx:id="cDelete" prefWidth="92.0" style="-fx-alignment: center;" text="Delete" />
+        </columns>
+      </TableView>
+
+   </children>
+</Pane>

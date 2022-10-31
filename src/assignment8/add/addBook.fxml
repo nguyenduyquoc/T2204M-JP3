@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="584.0" prefWidth="427.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="assignment8.add.AddBookController">
+   <children>
+      <Text fill="#901717" layoutX="96.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CREAT INFORMATION BOOK">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtBookId" layoutX="64.0" layoutY="85.0" prefHeight="31.0" prefWidth="300.0" promptText="Book Identify">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtBookName" layoutX="64.0" layoutY="150.0" prefHeight="31.0" prefWidth="300.0" promptText="Book Name">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtAuthor" layoutX="64.0" layoutY="210.0" prefHeight="31.0" prefWidth="300.0" promptText="Author">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtPrice" layoutX="65.0" layoutY="400.0" prefHeight="37.0" prefWidth="300.0" promptText="Price">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <ComboBox fx:id="cbPublisher" layoutX="65.0" layoutY="271.0" prefHeight="37.0" prefWidth="300.0" promptText="Publisher" />
+      <ComboBox fx:id="cbKindOfBook" layoutX="65.0" layoutY="334.0" prefHeight="37.0" prefWidth="300.0" promptText="Kind of book" />
+      <TextField fx:id="txtQuantity" layoutX="66.0" layoutY="463.0" prefHeight="37.0" prefWidth="300.0" promptText="Quantity">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <Button layoutX="180.0" layoutY="523.0" mnemonicParsing="false" onAction="#submit" prefHeight="31.0" prefWidth="87.0" style="-fx-background-color: red;" text="Submit">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="14.0" layoutY="28.0" mnemonicParsing="false" onAction="#backToList" style="-fx-background-color: grey;" text="back">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="584.0" prefWidth="449.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="assignment8.list.ListBookController">
+   <children>
+      <Text fill="#971212" layoutX="29.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LIST OF BOOKS">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <Button layoutX="324.0" layoutY="59.0" mnemonicParsing="false" onAction="#addBook" style="-fx-background-color: GREY;" text="Add book&gt;&gt;">
+         <font>
+            <Font size="13.0" />
+         </font></Button>
+      <ListView fx:id="listView" layoutX="32.0" layoutY="100.0" prefHeight="423.0" prefWidth="385.0" />
+      <Button layoutX="32.0" layoutY="537.0" mnemonicParsing="false" onAction="#shortByPrice" prefHeight="31.0" prefWidth="99.0" style="-fx-background-color: grey;" text="Sort by price">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button layoutX="142.0" layoutY="537.0" mnemonicParsing="false" onAction="#shortByQuantity" style="-fx-background-color: grey;" text="Short by quantity">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <TextField fx:id="searchBoxName" layoutX="32.0" layoutY="59.0" prefHeight="31.0" prefWidth="138.0" promptText="Enter bookname .......">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font>
+      </TextField>
+      <Button layoutX="180.0" layoutY="58.0" mnemonicParsing="false" onAction="#search" style="-fx-background-color: grey;" text="Search">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="354.0" layoutY="537.0" mnemonicParsing="false" onAction="#edit" style="-fx-background-color: grey;" text="Edit&gt;&gt;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="281.0" layoutY="537.0" mnemonicParsing="false" onAction="#delete" style="-fx-background-color: grey;" text="Delete">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>
