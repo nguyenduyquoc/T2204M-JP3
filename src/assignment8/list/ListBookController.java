@@ -40,7 +40,9 @@ public class ListBookController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        ls.add(new InformationBook("DQ11","Một con vịt", "Hoang Duy Quoc", "NXB Tre","Kinh di",56,333));
         listView.setItems(ls);
+
     }
 
     public void addBook(ActionEvent actionEvent) throws Exception{
