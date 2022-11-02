@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import java.sql.*;
 
 
 import java.net.URL;
@@ -18,7 +19,7 @@ import java.util.ResourceBundle;
 
 public class Session5Controller implements Initializable {
 
-    public static ObservableList<StudentSession5> ls = FXCollections.observableArrayList();
+    public ObservableList<StudentSession5> ls = FXCollections.observableArrayList();
 
     public TableView<StudentSession5> tbStudent;
 
@@ -28,6 +29,9 @@ public class Session5Controller implements Initializable {
     public TableColumn<StudentSession5, String> cGender;
     public TableColumn<StudentSession5,Button> cAction;
 
+    public final static String connectionString = "jdbc:mysql://localhost:3306/t2204m_java1";
+    public final static String user = "root";
+    public final static String pwd = "";
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         cName.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -36,14 +40,26 @@ public class Session5Controller implements Initializable {
         cGender.setCellValueFactory(new PropertyValueFactory<>("gender"));
         cAction.setCellValueFactory(new PropertyValueFactory<>("edit"));
 
-        if(ls.size() == 0){
-            ls.add(new StudentSession5("Hoang Duy Quoc","quocndth@gmail.com",2,"Male"));
-            ls.add(new StudentSession5("Nguyen Duy Quoc ","quoc1288@gmail.com",4,"Male"));
-            ls.add(new StudentSession5("Hoang Duy Quoc","quocndth@gmail.com",2,"Male"));
-            ls.add(new StudentSession5("Nguyen Duy Quoc ","quoc1288@gmail.com",4,"Male"));
-            ls.add(new StudentSession5("Hoang Duy Quoc","quocndth@gmail.com",2,"Male"));
-            ls.add(new StudentSession5("Nguyen Duy Quoc ","quoc1288@gmail.com",4,"Male"));
+        //lây dữ liệu từ database
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(connectionString,user,pwd);
+            Statement stt = conn.createStatement();
+            String sql_txt = "select * from students";
+            ResultSet rs = stt.executeQuery(sql_txt);
+            while (rs.next()){
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                String email  = rs.getString("email");
+                int mark = Integer.parseInt(rs.getString("mark"));
+                String gender =  rs.getString("gender");
+                StudentSession5 s = new StudentSession5(id, name, email, mark,gender);
+                ls.add(s);
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
+
         tbStudent.setItems(ls);
     }
 

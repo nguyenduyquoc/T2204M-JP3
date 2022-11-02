@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import session5.edit.EditSession5Controller;
 
 public class StudentSession5 {
+    private Integer id;
     private String name;
     private String email;
     private int mark;
@@ -16,7 +17,8 @@ public class StudentSession5 {
     private Button edit;
 
 
-    public StudentSession5(String name, String email, int mark, String gender) {
+    public StudentSession5(Integer id,String name, String email, int mark, String gender) {
+        this.id = id;
         this.name = name;
         this.email = email;
         this.mark = mark;
@@ -35,6 +37,14 @@ public class StudentSession5 {
                 alert.show();
             }
         });
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
