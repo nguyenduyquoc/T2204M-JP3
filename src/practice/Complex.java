@@ -58,7 +58,7 @@ public class Complex {
 
     }
     public Complex divide(Complex cl) throws Exception{
-        if (cl.getRealPart() == 0 && cl.getImaginaryPart() == 0) throw new Exception("Cannot zero!");
+        if (cl.getRealPart() == 0 && cl.getImaginaryPart() == 0) throw new Exception("please enter a number other than 0");
         Complex c = new Complex();
         c.setRealPart((this.getRealPart() * cl.getRealPart() + this.getImaginaryPart() * cl.getImaginaryPart()) /
                 (cl.getRealPart() * cl.getRealPart() + cl.getImaginaryPart() * cl.getImaginaryPart()));
