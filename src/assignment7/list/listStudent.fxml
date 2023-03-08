@@ -14,6 +14,7 @@
          </font>
       </Text>
       <ListView fx:id="listView" layoutX="42.0" layoutY="105.0" prefHeight="386.0" prefWidth="325.0" />
+
       <Button layoutX="265.0" layoutY="40.0" mnemonicParsing="false" onAction="#addStudent" text="Add student" textFill="#b81616" />
       <Button onAction="#edit" layoutX="321.0" layoutY="511.0" mnemonicParsing="false" text="Edit" textFill="#b81616" />
       <Button onAction="#sortByName" layoutX="42.0" layoutY="511.0" mnemonicParsing="false" text="Sort by Name" textAlignment="CENTER" textFill="#b81616" />
