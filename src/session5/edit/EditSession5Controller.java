@@ -55,14 +55,10 @@ public class EditSession5Controller implements Initializable {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(Session5Controller.connectionString,Session5Controller.user,Session5Controller.pwd);
             Statement stt = conn.createStatement();
-            String sql_txt = "update students(name,email,mark,gender) set('"
-                    +txtName.getText()+"','"
-                    +txtEmail.getText()+"',"
-                    +m
-                    +",'"+cbGender.getValue()+"') where id = editedSession5.getId()"
-                    ;
+
+            String sql_txt = "UPDATE students SET name = '" + txtName.getText() + "', email = '" + txtEmail.getText() + "', mark = " + m + ", gender = '" + cbGender.getValue() + "' WHERE id = "  + editedSession5.getId();
+            stt.execute(sql_txt);
             stt.executeUpdate(sql_txt);
-            backToList(null);
             backToList(null);
         } catch (Exception e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);

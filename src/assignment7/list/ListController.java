@@ -51,7 +51,7 @@ public class ListController implements Initializable {
        Collections.sort(getLs(), new Comparator<Mark_Student>() {
            @Override
            public int compare(Mark_Student o1, Mark_Student o2) {
-               if (!status) {
+               if (status) {
                    return o1.getName().compareTo(o2.getName());
                }
                return o2.getName().compareTo(o1.getName());
@@ -64,7 +64,7 @@ public class ListController implements Initializable {
         Collections.sort(getLs(), new Comparator<Mark_Student>() {
             @Override
             public int compare(Mark_Student o1, Mark_Student o2) {
-                if (!status) {
+                if (status) {
                     return o1.getMark() - o2.getMark();
                 }
                 return o2.getMark() - o1.getMark();

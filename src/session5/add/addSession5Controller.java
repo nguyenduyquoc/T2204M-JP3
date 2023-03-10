@@ -24,7 +24,6 @@ import java.util.ResourceBundle;
 public class addSession5Controller implements Initializable {
 
     public TextField txtName;
-
     public TextField txtEmail;
     public TextField txtMark;
     public ComboBox<String> cbGender;
@@ -57,8 +56,8 @@ public class addSession5Controller implements Initializable {
             String sql_txt = "insert into students(name,email,mark,gender) values('"
                     +txtName.getText()+"','"
                     +txtEmail.getText()+"',"
-                    +m
-                    +",'"+cbGender.getValue()+"')"
+                    +m +",'"
+                    +cbGender.getValue()+"')"
                     ;
             stt.executeUpdate(sql_txt);
             backToList(null);
